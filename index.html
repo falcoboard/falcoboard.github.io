@@ -81,13 +81,13 @@
   <tr>
    <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
   
-  <th onclick="sortTable(0)">Name </th>
-  <th onclick="sortTable(1)">Min players</th>
-  <th onclick="sortTable(2)">Best players</th>
-  <th onclick="sortTable(3)">Max players</th>
-  <th onclick="sortTable(4)">Complexity</th>
-  <th onclick="sortTable(5)">Rating</th>
-  <th onclick="sortTable(6)">Playing time</th>
+  <th onclick="sortTable(0,0)">Name </th>
+  <th onclick="sortTable(1,1)">Min players</th>
+  <th onclick="sortTable(2,1)">Best players</th>
+  <th onclick="sortTable(3,1)">Max players</th>
+  <th onclick="sortTable(4,1)">Complexity</th>
+  <th onclick="sortTable(5,1)">Rating</th>
+  <th onclick="sortTable(6,1)">Playing time</th>
   <th>Category</th>
   <th>Image</th>
   <th>Description</th>
@@ -700,7 +700,7 @@
 </table>
 
 <script>
-function sortTable(n) {
+function sortTable(n,num) {
   var table, rows, flag, i, x, y, canvi, dir, cont = 0;
   table = document.getElementById("myTable");
   flag = true;
@@ -717,19 +717,35 @@ function sortTable(n) {
 
       x = rows[i].getElementsByTagName("TD")[n];
       y = rows[i + 1].getElementsByTagName("TD")[n];
-
-      if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          canvi= true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          canvi= true;
-          break;
-        }
-      }
-    }
+    if (num) {
+	    if (dir == "asc") {
+	    	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+	          canvi= true;
+	          break;
+	        }
+	    } 
+	    else if (dir == "desc") {
+	       	if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+	       		canvi= true;
+	       		break;
+	       	}
+	    }
+	}
+	else{
+	    if (dir == "asc") {
+	    	if (x.innerHTML > y.innerHTML) {
+	          canvi= true;
+	          break;
+	        }
+	    } 
+	    else if (dir == "desc") {
+	       	if (x.innerHTML< y.innerHTML) {
+	       		canvi= true;
+	       		break;
+	       	}
+	    }
+	}
+	}
     if (canvi) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       flag = true;
