@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Let's Play</title> 
+
+<link rel="shortcut icon" type="image/png" href="http://www.clipartsfree.net/vector/large/9712-six-sided-dice-d6--vector.png"/>
+
+
+  <style>
+
+    body {
+        font-family: 'Comic Sans MS', verdana;
+      text-align: center;
+    }
+/*    tr{
+      background-color: #f4cf3a;
+    }
+    tr:hover{
+      background-color: #f79409;
+    }*/
+    tr:hover{
+      background-color:rgba(247, 148, 9, 0.5);
+    }
+    tr>th{
+      background-color: rgba(43,84,121, 0.5);
+    }
+    tr>th:hover{
+      background-color: #a366ff;
+    }
+
+    body{
+       /*background-image: url("http://vxresource.files.wordpress.com/2010/07/scene01.jpg");*/
+      background-image: url("https://www.dualshockers.com/wp-content/uploads/2014/06/Legend-Of-Zelda-Wii-U.jpg");
+          background-repeat: no-repeat;
+    background-attachment: fixed;
+           }
+
+
+    .nameGame{
+      font-family: 'Comic Sans MS';
+    }
+    .morecontent span {
+        display: none;
+    }
+    .morelink {
+        display: block;
+    }
+    .img{
+      width:40x;
+      height:30px;
+    }
+
+    .img:hover{
+    color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(7);
+  -ms-transform: scale(7); /* IE 9 */
+-webkit-transform: scale(7); /* Safari and Chrome */
+  }
+
+  </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+<img src="http://i68.tinypic.com/5b7im8.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+
+<table border="1" id="myTable">
+  <tr>
+   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+  
+  <th onclick="sortTable(0)">Name </th>
+  <th onclick="sortTable(1)">Min players</th>
+  <th onclick="sortTable(2)">Best players</th>
+  <th onclick="sortTable(3)">Max players</th>
+  <th onclick="sortTable(4)">Complexity</th>
+  <th onclick="sortTable(5)">Rating</th>
+  <th onclick="sortTable(6)">Playing time</th>
+  <th>Category</th>
+  <th>Image</th>
+  <th>Description</th>
+  <th>Gameplay</th>
+  </tr>
+  <tr>
+    <th>
+      <input type="text" id="myName" onkeyup="searchName()" placeholder="Search for names..">
+    </th>
+    <th></th><!--Min-->
+    <th></th><!--best-->
+    <th></th><!--Max-->
+    <th></th><!--complexity-->
+    <th></th><!--rating-->
+    <th></th><!--time-->
+    <th><!--category-->
+      <select  id="myCategory" onclick="searchCategory()">
+		<option value="all">All</option>
+		<option value="area">Area Control</option>
+		<option value="card">Card Game</option>
+		<option value="child">Children</option>
+		<option value="co-op">Co-operative</option>
+		<option value="deduction">Deduction</option>
+		<option value="family">Family</option>
+		<option value="hiding">Hiding Roles</option>
+		<option value="negotiation">Negotiation</option>
+		<option value="party">Party</option>
+		<option value="route">Route Building</option>
+		<option value="strategy">Strategy</option>
+		<option value="thematic">Thematic</option>
+		<option value="tile">Tile Placement</option>
+		<option value="trivia">Trivia</option>
+
+    </select>
+  </th>
+  <th></th>
+  <th></th><!--description-->
+  <th></th><!--gameplay-->
+    
+
+  </tr>
+  <tr>
+	<td class='nameGame'>Atmosfear</td>
+	<td>3</td>
+	<td>4</td>
+	<td>6</td>
+	<td>1.62</td>
+	<td>5.5	</td>
+	<td>60min.</td>
+	<td>Party</td>
+	<td class='thumbnail'><img src='http://www.keecua.com/ofertas/images/auctions/20100724/4c4b3144e77993.93709857.JPG' class='img'></td>
+	<td><span class='more'>An update to the VCR games Nightmare from 1991 and it's 1995 successor, Atmosfear. The aim of Atmosfear is to collect a key from each of the six regions of the board before heading to the "Well of Fears" in the center and attempting to draw your fear from among those of your opponents in order to win the game. This must be done before 49 minutes pass, or all players lose automatically.</span></td>
+	<td><a class='gameplay' href='https://www.youtube.com/watch?v=A9F9gI9Q-Mk'>Link</a></td>
+  </tr>
+  <tr>
+    <td class="nameGame">Aventureros al tren</td>
+    <td>2</td>
+    <td>4</td>
+    <td>5</td>
+    <td>1.87</td>
+    <td>7.5</td>
+    <td>40 min.</td>
+    <td>Route Building</td>
+    <td><a class="gameplay" target="_blank" href="https://www.youtube.com/watch?v=ClokNHi-aJM"><img src="http://www.tiendamab.com/wp-content/uploads/2017/04/aventureros-al-tren-juego-de-mesa-1024x1024.jpg" class="img" alt=""></a></td>
+    <td ><span class="more">Ticket to Ride is a cross-country train adventure where players collect cards of various types of train cars that enable them to claim railway routes connecting cities in various countries around the world.</span></td>
+    <td><a class="gameplay" href="https://www.youtube.com/watch?v=ClokNHi-aJM">Link</a></td>
+  </tr>
+
+  <tr>
+    <td class="nameGame">Carcassone</td>
+    <td>2</td>
+    <td>2</td>
+    <td>5</td>
+    <td>1.93</td>
+    <td>7.4</td>
+    <td>45 min.</td>
+    <td>Area Control</td>
+    <td class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Carcassonne-game.jpg" class="img"></td>
+    <td ><span class="more">Carcassonne is a tile-placement game in which the players draw and place a tile with a piece of southern French landscape on it.</span> </td>
+    <td><a class="gameplay" href="https://www.youtube.com/watch?v=r7sqZJJMy1A">Link</a></td>  
+  </tr>
+
+  <tr>
+    <td class="nameGame">Catan</td>
+    <td>3</td>
+    <td>4</td>
+    <td>4</td>
+    <td>2.36</td>
+    <td>7.2</td>
+    <td>80 min.</td>
+    <td>Negotiation / Area Control</td>
+    <td ><img src="https://cdn.shopify.com/s/files/1/0569/0557/products/catan_juego_1_large.jpg?v=1411809379" class="img"></td>
+    <td ><span class="more">In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads</span></td>
+    <td><a class="gameplay" href="https://www.youtube.com/watch?v=LJ9l95EPdSE">Link</a></td>  
+  </tr>
+<td class='nameGame'>Ciudadelas</td>
+<td>2</td>
+<td>5</td>
+<td>8</td>
+<td>2.06</td>
+<td>7.1</td>
+<td>40 min.</td>
+<td>Strategy / Hiding Roles</td>
+<td class='thumbnail'><img src='http://static.zacatrus.es/media/catalog/product/cache/1/image/560x/9df78eab33525d08d6e5fb8d27136e95/c/i/ciudadels_1.png' class='img'></td>
+<td><span class='more'>In Citadels, players take on new roles each round to represent characters they hire in order to help them acquire gold and erect buildings. The game ends at the close of a round in which a player erects his/her eighth building. Players then tally their points, and the player with the highest score wins.</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=h45ELoN4-K0'>Link</a></td>
+</tr>
+<tr>
+	<td class='nameGame'>Cluedo FX</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>1.81</td>
+<td>6.2</td>
+<td>30 min.</td>
+<td>Deduction</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/images/pic238451_md.jpg' class='img'></td>
+<td><span class='more'>Clue FX brings the mystery to life with electronic speech and sound effects! The body of Miles Meadow-Brook, John Boddy's trusted attorney has just been found, and it's up to you to find out who did it...where...and with what weapon!</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=mz1zkg2b9O4'>Link</a></td>
+</tr>
+<tr>
+	<td class='nameGame'>Cranium</td>
+<td>4</td>
+<td>16</td>
+<td>8</td>
+<td>1.44</td>
+<td>5.7</td>
+<td>60 min.</td>
+<td>Party</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/images/pic180029_md.jpg' class='img'></td>
+<td><span class='more'>Cranium bills itself as the "whole-brain" game. It's a party game that borrows from a host of other popular party games of recent times. </span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=CFzfVcv8AaY'>Link</a></td>
+</tr>
+  <tr>
+    <td class="nameGame">Desierto prohibido</td>
+    <td>1</td>
+    <td>4</td>
+    <td>5</td>
+    <td>2.04</td>
+    <td>7.2</td>
+    <td>45 min.</td>
+    <td>Co-operative</td>
+    <td><img src="https://www.ludonauta.es/files/ludico/juegos-mesas/juego-mesa-el-desierto-prohibido-363787404.jpg" class="img"></td>
+    <td ><span class="more">In Forbidden Desert players take on the roles of brave adventurers who must throw caution to the wind and survive both blistering heat and blustering sand in order to recover a legendary flying machine buried under an ancient desert city.</span></td>
+    <td><a class="gameplay" href="https://www.youtube.com/watch?v=xYTM32K9vRU">Link</a></td>  
+  </tr>
+  
+  <td class='nameGame'>Dobble
+</td>
+<td>2
+</td>
+<td>8
+</td>
+<td>5
+</td>
+<td>1.04
+</td>
+<td>6.7
+</td>
+<td>15
+ min.</td>
+<td>Party
+</td>
+<td class='thumbnail'><img src='http://static.zacatrus.es/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/o/dobble.png
+' class='img'></td>
+<td><span class='more'>Spot it!, a.k.a. Dobble, is a simple pattern recognition game in which players try to find an image shown on two cards. Each card in Spot it! features eight different symbols, with the symbols varying in size from one card to the next. Any two cards have exactly one symbol in common. For the basic Spot it! game, reveal one card, then another.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=Hkq-_eVR8zA
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Dragones y Mazmorras
+</td>
+<td>2
+</td>
+<td>5
+</td>
+<td>5
+</td>
+<td>2.18
+</td>
+<td>6.5
+</td>
+<td>60
+ min.</td>
+<td>Thematic / Co-operative
+</td>
+<td class='thumbnail'><img src='https://www.orderofgamers.com/wordpress/wp-content/uploads/2013/04/danddboardgame_box.png
+' class='img'></td>
+<td><span class='more'>A cooperative dungeon crawl game in which a party of four heroes strives to complete adventures that the Dungeon Master puts before them.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=5DibxKjGZSM
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Eldritch Horror
+</td>
+<td>1
+</td>
+<td>4
+</td>
+<td>8
+</td>
+<td>3.30
+</td>
+<td>7.9
+</td>
+<td>200
+ min.</td>
+<td>Thematic / Co-operative
+</td>
+<td class='thumbnail'><img src='https://images-cdn.fantasyflightgames.com/filer_public/6a/a0/6aa0d827-580b-4037-8296-59d35a9ce902/eh01_main.png
+' class='img'></td>
+<td><span class='more'>Eldritch Horror is a cooperative game of terror and adventure in which one to eight players take the roles of globetrotting investigators working to solve mysteries, gather clues, and protect the world from an Ancient One  that is, an elder being intent on destroying our world.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=Whj7nYBzBtU
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Fauna
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>6
+</td>
+<td>1.49
+</td>
+<td>7.1
+</td>
+<td>50
+ min.</td>
+<td>Family / Trivia
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/images/pic1091049_md.jpg
+' class='img'></td>
+<td><span class='more'>Every round a single animal presents itself by name and picture. The 2-6 players try to guess the animal's weight, length, height, tail length and - most important - the areas in which the animal lives on the Earth. The early bird gets the worm: an area on the big map or a sector on the scales already occupied by a player token cannot be chosen a second time.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=bSYfGXf5Jxc
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Genial
+</td>
+<td>1
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>1.93
+</td>
+<td>7.2
+</td>
+<td>45
+ min.</td>
+<td>Tile Placement
+</td>
+<td class='thumbnail'><img src='http://www.mesadejuegos.es/sites/default/files/imagecache/juegos_first_thumb/tmp_juegos_9674.jpg
+' class='img'></td>
+<td><span class='more'>In Ingenious, a.k.a. Einfach Genial, players take turns placing colored domino-style tiles on a game board, scoring for each line of colored symbols that they enlarge. The trick, however, is that a player's score is equal to her worst-scoring color, not her best, so she needs to score for all colors instead of specializing in only one or two.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=x4IZ3NkXCyw
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Gloom
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>4
+</td>
+<td>1.64
+</td>
+<td>6.4
+</td>
+<td>60
+ min.</td>
+<td>Thematic / Card Game
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/i50fRQTTXM1wdLziRbL6ywz_lG0=/fit-in/246x300/pic2080481.jpg
+' class='img'></td>
+<td><span class='more'>In the Gloom card game, you assume control of the fate of an eccentric family of misfits and misanthropes. The goal of the game is sad, but simple: you want your characters to suffer the greatest tragedies possible before passing on to the well-deserved respite of death.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=0artLwe87I4
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Illuminati
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>8
+</td>
+<td>2.65
+</td>
+<td>6.5
+</td>
+<td>100
+ min.</td>
+<td>Card Game / Negotiation
+</td>
+<td class='thumbnail'><img src='http://www.sjgames.com/illuminati/img/cover_lg.jpg
+' class='img'></td>
+<td><span class='more'>In this classic Steve Jackson (I) game of world domination, each player is a secret society attempting to spread its tendrils into special interest groups throughout the world. This latest edition comes with additional cards and reworked graphics to bring the venerable game up to date.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=zlTGysXmcqk
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Intelect
+</td>
+<td>2
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>2.13
+</td>
+<td>6.3
+</td>
+<td>90
+ min.</td>
+<td>Family
+</td>
+<td class='thumbnail'><img src='https://cloud10.todocoleccion.online/juegos-mesa/tc/2016/10/02/10/61651020.jpg
+' class='img'></td>
+<td><span class='more'>In this classic word game, players use their seven drawn letter-tiles to form words on the gameboard. Each word laid out earns points based on the commonality of the letters used, with certain board spaces giving bonuses. But a word can only be played if it uses at least one already-played tile or adds to an already-played word.
+</span></td>
+<td><a class='gameplay' href='https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjrz7b4rIbXAhWDXhQKHWqCDPcQuAIIJzAA&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DloOL44NxmaM&usg=AOvVaw1RRTHIi65jKN7zV-JOXcIz
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Jungle Speed
+</td>
+<td>2
+</td>
+<td>5
+</td>
+<td>8
+</td>
+<td>1.15
+</td>
+<td>6.6
+</td>
+<td>15
+ min.</td>
+<td>Party
+</td>
+<td class='thumbnail'><img src='http://www.foxmind.com/media/62028/junglespeed.png
+' class='img'></td>
+<td><span class='more'>In Jungle Speed, you must rely on your keen sense of observation and quick reflexes. It requires a steady hand -- which can be hard to maintain during the many fits of maniacal laughter! The wooden Totem sits in the middle of the table, waiting for the player with the fastest reflexes to snatch it up and win the game.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=Ui5ZWDC49aY
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>King of Tokyo
+</td>
+<td>2
+</td>
+<td>5
+</td>
+<td>6
+</td>
+<td>1.51
+</td>
+<td>7.3
+</td>
+<td>30
+ min.</td>
+<td>Family
+</td>
+<td class='thumbnail'><img src='https://cdn.shopify.com/s/files/1/1242/5292/products/kingoftokyo_776x.png?v=1498504943
+' class='img'></td>
+<td><span class='more'>In King of Tokyo, you play mutant monsters, gigantic robots, and strange aliensall of whom are destroying Tokyo and whacking each other in order to become the one and only King of Tokyo. At the start of each turn, you roll six dice, which show the following six symbols: 1, 2, or 3 Victory Points, Energy, Heal, and Attack. Over three successive throws, choose whether to keep or discard each die in order to win victory points, gain energy, restore health, or attack other players into understanding that Tokyo is YOUR territory.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=BGaCjM2hal4
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Misterios de Pekin
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>6
+</td>
+<td>1.34
+</td>
+<td>5.7
+</td>
+<td>30
+ min.</td>
+<td>Family / Children
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/dOcJCx2HeTpLMOuC35TTtOw9Gl8=/fit-in/1200x630/pic185698.jpg
+' class='img'></td>
+<td><span class='more'>As one of the best detectives in Chinatown, you'll have to solve one of the mysteries in the casebook and reveal the criminal. To get clues, you must go to the different witnesses and interrogate them. You may move the dragons with the help of fortune cookies and prevent the other detectives from getting there before you. When you discover the culprit, you must go to the dragon he is hiding in.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=N5hEOmEot_I
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Monopoly
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>8
+</td>
+<td>1.81
+</td>
+<td>4.6
+</td>
+<td>200
+ min.</td>
+<td>Family
+</td>
+<td class='thumbnail'><img src='http://fernandezmoro.com/monopoly/640-publicar/MONOPOLY-BARCELONA-2008.jpg
+' class='img'></td>
+<td><span class='more'>This is a Monopoly game using locals in Barcelona. The board is identical, only the names have changed. The Chance and Community Chest cards are brighter and more colorful than a standard Monopoly set. Also the box has a nice insert designed to hold both the money (the bank) and the unpurchased properties.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=3-fGSFK3RVw
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Munchkin
+</td>
+<td>3
+</td>
+<td>4
+</td>
+<td>6
+</td>
+<td>1.79
+</td>
+<td>5.9
+</td>
+<td>70
+ min.</td>
+<td>Card Game / Thematic
+</td>
+<td class='thumbnail'><img src='http://www.worldofmunchkin.com/game/img/cover3_lg.jpg
+' class='img'></td>
+<td><span class='more'>Go down in the dungeon. Kill everything you meet. Backstab your friends and steal their stuff. Grab the treasure and run. Admit it. You love it.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=V6oMBSiL7Zs
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Pokemon
+</td>
+<td>2
+</td>
+<td>4
+</td>
+<td>6
+</td>
+<td>1.97
+</td>
+<td>5.7
+</td>
+<td>45
+ min.</td>
+<td>Thematic / Family
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/GH78o0FI_T9uZd454F6-tc2l_wo=/fit-in/1200x630/pic297011.jpg
+' class='img'></td>
+<td><span class='more'>Based on the Nintendo Pokemon franchise, each player becomes a Pokemon Trainer (represented by Ash Ketchum figures) making his way around the pre-made board map to get to Indigo Plateau where he can challenge the current, reigning Pokemon Champion (represented by cards) to a battle with the Pokemon he's collected on the trip there.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=x5uTmKd4n88
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Samurai Sword
+</td>
+<td>3
+</td>
+<td>7
+</td>
+<td>7
+</td>
+<td>1.74
+</td>
+<td>6.7
+</td>
+<td>30
+ min.</td>
+<td>Card Game / Hiding Roles
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/S1Pnfbk5rs9Lmks6Fdz3_H1WVYw=/fit-in/246x300/pic1531841.jpg
+' class='img'></td>
+<td><span class='more'>Samurai Sword is a game based on the proven Bang! mechanisms and set in feudal Japan. In this game, the familiar features of Bang! are enhanced by more dynamic and fast-paced game play, and thanks to a new scoring system  based on honor points and resilience points  there is no player elimination. Everybody gets to fight to the very end! Also, weapons and attacks are fused into a single card.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=ifPQGTcO4_o
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Scattergories
+</td>
+<td>2
+</td>
+<td>6
+</td>
+<td>6
+</td>
+<td>1.42
+</td>
+<td>6.1
+</td>
+<td>30
+ min.</td>
+<td>Party
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/images/pic1395133.jpg
+' class='img'></td>
+<td><span class='more'>"The Game of Scattergories" is a game for any group to play. In the game each player fills out a category list 'with answers that begin with the same letter.' If no other player matches your answers, you score points. The game is played in rounds. After 3 rounds a winner is declared, and a new game can be begun.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=eIlsJowkvd4
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Sector 6
+</td>
+<td>1
+</td>
+<td>4
+</td>
+<td>6
+</td>
+<td>2.25
+</td>
+<td>7.3
+</td>
+<td>40
+ min.</td>
+<td>Strategy
+</td>
+<td class='thumbnail'><img src='https://i0.wp.com/www.fanhammer.org/v2/wp-content/uploads/2016/12/sector-6-f.jpg
+' class='img'></td>
+<td><span class='more'>Sector 6 is an abstract strategy game for 1 to 4 players, with a playing time of 30 minutes. Each player controls two prisoners as they make their way through the winding labyrinth of a space prison, trying to collect enough oxygen to survive while denying their opponents the same. The goal is to collect as many points as possible (represented by oxygen tiles of different colors and values), located inside a maze formed by hexagonal tiles. Players must move across the maze and collect the points before their opponents.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=F3G6Rx1Ll8g
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Spartacus
+</td>
+<td>3
+</td>
+<td>4
+</td>
+<td>4
+</td>
+<td>2.69
+</td>
+<td>7.5
+</td>
+<td>150
+ min.</td>
+<td>Thematic / Negotiation
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/zRZUdkWx0ZcvA44k1T-yrTO4aUA=/fit-in/246x300/pic1533071.jpg
+' class='img'></td>
+<td><span class='more'>In Spartacus: A Game of Blood & Treachery, an exciting game of twisted schemes and bloody combats inspired by the hit STARZ Original series, each player takes on the role of Dominus, head of a rising house in the ancient Roman city of Capua. Each house is competing for Influence to gain the favor of Rome. Through a combination of political schemes and glorious battles on the arena sands your house will rise in fame and stature. As Dominus, you have a variety of resources at your disposal. 
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=fQHqmUO3-oE
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Time's Up
+</td>
+<td>4
+</td>
+<td>8
+</td>
+<td>18
+</td>
+<td>1.22
+</td>
+<td>7.3
+</td>
+<td>90
+ min.</td>
+<td>Party
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/b_e4XpscBGs5NqItGukXuGWX6bY=/fit-in/246x300/pic393663.jpg
+' class='img'></td>
+<td><span class='more'>Time's Up! is a charades-based party game for teams of two or more players. In each round, team members take turns trying to get their teammates to guess as many names as possible in 30 seconds. In round 1, almost any kind of clue is allowed, and the cluegiver cannot pass on a card. In round 2, no more than one word can be used in each clue (but unlimited sounds and gestures are permitted); the cluegiver can pass on any card he likes, and the teammates can give only a single answer. In round 3, the cluegiver can use no words at all and can pass as often as he likes; again, teammates are allowed only a single guess.
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=FAtQQsh776A
+'>Link</a></td>
+</tr><tr>
+<td class='nameGame'>Zombicide Black Plague
+</td>
+<td>1
+</td>
+<td>4
+</td>
+<td>6
+</td>
+<td>2.58
+</td>
+<td>7.9
+</td>
+<td>100
+ min.</td>
+<td>Co-operative / Thematic
+</td>
+<td class='thumbnail'><img src='https://cf.geekdo-images.com/TUTTLpuyVcvwcJIasTrbv3-48vY=/fit-in/246x300/pic2482309.jpg
+' class='img'></td>
+<td><span class='more'>Zombicide: Black Plague takes the zombie apocalypse into a fantastical medieval setting! The arcane powers of the Necromancers have unleashed a zombie invasion in the age of swords and sorcery, and it's up to your group of straggling survivors to not only stay alive during these dark times, but to take back the realm and punish those responsible for the apocalypse!
+</span></td>
+<td><a class='gameplay' href='https://www.youtube.com/watch?v=eP667Xj90nw
+'>Link</a></td>
+</tr>
+
+
+</table>
+
+<script>
+function sortTable(n) {
+  var table, rows, flag, i, x, y, canvi, dir, cont = 0;
+  table = document.getElementById("myTable");
+  flag = true;
+  dir = "asc"; 
+
+  while (flag) {
+    
+    flag = false;
+    rows = table.getElementsByTagName("TR");
+
+    for (i = 2; i < (rows.length - 1); i++) {
+
+      canvi = false;
+
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          canvi= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          canvi= true;
+          break;
+        }
+      }
+    }
+    if (canvi) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      flag = true;
+      cont ++;      
+    } else {
+      if (cont == 0 && dir == "asc") {
+        dir = "desc";
+        flag = true;
+      }
+    }
+  }
+}
+
+function searchName() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myName");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hideDescription those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+
+function searchCategory() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myCategory");
+  filter = input.value.toUpperCase();
+  if (filter=="ALL") filter="";
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hideDescription those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[7];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+</script>
+
+<script>
+$(document).ready(function(){
+    $(".descriptionButton").click(function(){
+        $(".description").slideToggle();
+    });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    // Configure/customize these variables.
+    var showChar = 100;  // How many characters are shown by default
+    var ellipsestext = "...";
+    var moretext = "Show more >";
+    var lesstext = "Show less";
+    
+
+    $('.more').each(function() {
+        var content = $(this).html();
+ 
+        if(content.length > showChar) {
+ 
+            var c = content.substr(0, showChar);
+            var h = content.substr(showChar, content.length - showChar);
+ 
+            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+ 
+            $(this).html(html);
+        }
+ 
+    });
+ 
+    $(".morelink").click(function(){
+        if($(this).hasClass("less")) {
+            $(this).removeClass("less");
+            $(this).html(moretext);
+        } else {
+            $(this).addClass("less");
+            $(this).html(lesstext);
+        }
+        $(this).parent().prev().toggle();
+        $(this).prev().toggle();
+        return false;
+    });
+});
+</script>
+
+</body>
+</html>
